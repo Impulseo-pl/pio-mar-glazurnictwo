@@ -6,17 +6,17 @@
 
 :root{
   /* PALETA — jasna, architektoniczna, chłodna */
-  --paper:#FCFCFB;          /* główne tło */
-  --paper-2:#F2F1EE;        /* sekcje alternatywne (chłodny jasny szary) */
-  --paper-3:#E9ECEB;        /* delikatne wypełnienia */
-  --ink:#15191C;            /* tekst główny — chłodny grafit */
-  --ink-soft:#3A4248;       /* nagłówki drugorzędne */
-  --muted:#5E666C;          /* tekst poboczny */
-  --line:rgba(21,25,28,.12);/* hairline */
-  --accent:#C9A24B;         /* stonowany petrol-slate — jedyny akcent */
-  --accent-d:#B08A38;
-  --accent-soft:rgba(201,162,75,.10);
-  --dark:#0E0C08;           /* sekcje ciemne (stopka/CTA) */
+  --paper:#F4F6F8;          /* główne tło */
+  --paper-2:#E7EBEF;        /* sekcje alternatywne (chłodny jasny szary) */
+  --paper-3:#E7EBEF;        /* delikatne wypełnienia */
+  --ink:#15212E;            /* tekst główny — chłodny grafit */
+  --ink-soft:#243443;       /* nagłówki drugorzędne */
+  --muted:#6B7785;          /* tekst poboczny */
+  --line:rgba(21,33,46,.12);/* hairline */
+  --accent:#E8A317;         /* stonowany petrol-slate — jedyny akcent */
+  --accent-d:#C9870C;
+  --accent-soft:rgba(232,163,23,.10);
+  --dark:#15212E;           /* sekcje ciemne (stopka/CTA) */
 
   /* ODSTĘPY — skala 4/8 */
   --space-1:4px; --space-2:8px; --space-3:12px; --space-4:16px; --space-5:24px;
@@ -43,8 +43,8 @@
 
   --hairline:1px solid var(--line);
 
-  --font-display:'Marcellus','Manrope',serif;
-  --font-body:'Manrope',sans-serif;
+  --font-display:'Space Grotesk','Inter',sans-serif;
+  --font-body:'Inter',sans-serif;
 }
 
 *{box-sizing:border-box;margin:0;padding:0}
@@ -427,6 +427,419 @@ section{padding-block:clamp(64px,8vw,128px)}
 .godz-row:last-child{border-bottom:0}
 .godz-row b{font-weight:600;color:var(--ink)}
 .godz-row span{color:var(--muted);white-space:nowrap}
+
+/* === rodzina: fachowcy === */
+/* ============================================================
+   RODZINA: FACHOWCY (hydraulik/elektryk/remont/brukarstwo/ogrodzenia)
+   Doklejane NA WIERZCH base.css. Dziedziczy paletę/fonty skórki (trade/elektryk).
+   Filozofia: telefon-bohater + zaufanie + „bezpłatna wycena". Spokój, nie krzyk.
+   (count-up i podwójny iframe mapy świadomie pominięte - krytyka blueprintu.)
+   ============================================================ */
+
+/* --- PROCES - oś „jak pracujemy" (podpis rodziny, czego nie ma w meblach) --- */
+.proces{background:var(--paper-2)}
+.proces-line{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);gap:var(--space-5);position:relative;margin:0;padding:0}
+.proces-line li{position:relative;padding-top:var(--space-7)}
+.proces-line li::before{content:"";position:absolute;top:14px;left:0;right:0;height:1px;background:var(--line)}
+.proces-line li:last-child::before{right:50%}
+.proces-line li:first-child::before{left:50%}
+.proces-line li::after{content:"";position:absolute;top:9px;left:calc(50% - 6px);width:11px;height:11px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px var(--paper-2)}
+.proces-line .pno{font-family:var(--font-display);font-weight:800;font-size:1.5rem;color:var(--accent);letter-spacing:-.02em;display:block;margin-bottom:var(--space-3);text-align:center}
+.proces-line h3{font-size:1.1rem;margin-bottom:var(--space-2);text-align:center}
+.proces-line p{color:var(--muted);font-size:var(--text-sm);line-height:1.5;text-align:center;max-width:26ch;margin-inline:auto}
+@media(max-width:820px){
+  .proces-line{grid-template-columns:1fr;gap:0}
+  .proces-line li{padding:var(--space-5) 0 var(--space-5) var(--space-7)}
+  .proces-line li::before{left:5px;right:auto;top:0;bottom:0;width:1px;height:auto}
+  .proces-line li:first-child::before,.proces-line li:last-child::before{left:5px;right:auto}
+  .proces-line li::after{top:var(--space-6);left:0}
+  .proces-line .pno,.proces-line h3,.proces-line p{text-align:left;margin-inline:0}
+}
+
+/* --- OBSZAR DZIAŁANIA - lokalność (chipy z REALNEGO miasta, bez drugiego iframe) --- */
+.obszar .head{text-align:center;margin-inline:auto}
+.obszar .head .eyebrow{justify-content:center}
+.obszar-list{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:var(--space-3);margin:0;padding:0;max-width:60rem;margin-inline:auto}
+.obszar-list li{border:1px solid var(--line);border-radius:999px;padding:var(--space-2) var(--space-5);
+  font-size:var(--text-sm);font-weight:600;color:var(--ink-soft);transition:border-color .24s var(--ease),color .24s var(--ease)}
+.obszar-list li:hover{border-color:var(--accent);color:var(--accent)}
+.obszar-list li.is-home{background:var(--accent);border-color:var(--accent);color:#fff}
+
+/* --- STICKY-CALL - dolny pasek mobile (najważniejszy konwerter tej rodziny) --- */
+.sticky-call{display:none}
+@media(max-width:820px){
+  .sticky-call{display:grid;grid-template-columns:1fr 1fr;gap:1px;position:fixed;left:0;right:0;bottom:0;z-index:90;
+    background:var(--line);box-shadow:0 -6px 20px -10px rgba(0,0,0,.4)}
+  .sticky-call a{padding:15px 8px;text-align:center;font-weight:700;font-size:.95rem;letter-spacing:.01em}
+  .sc-call{background:var(--accent);color:#fff}
+  .sc-quote{background:var(--paper);color:var(--ink)}
+  body{padding-bottom:56px}
+}
+
+/* --- Blok „Awaria? Dzwoń” (opcjonalny, hydraulik/elektryk) --- */
+.awaria{background:var(--dark);color:#fff}
+.awaria .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:var(--space-5);padding-block:var(--space-7)}
+.awaria h3{color:#fff;font-size:clamp(1.3rem,1rem + 1.2vw,1.8rem)}
+.awaria p{color:rgba(255,255,255,.72);margin-top:var(--space-2)}
+.awaria .btn-accent{white-space:nowrap}
+
+/* === CERTYFIKATY / CZYM PRACUJEMY (gated: renderuje sie tylko gdy brief poda certy/marki/gwarancja) - mocny lever dla dekarzy === */
+.auto-marki .marki-list{display:flex;flex-wrap:wrap;justify-content:center;gap:clamp(.8rem,2.5vw,1.6rem);list-style:none;margin:var(--space-7) 0 0;padding:0}
+.auto-marki .marki-list li{font-family:var(--font-display);text-transform:uppercase;letter-spacing:.12em;font-weight:600;
+  font-size:clamp(.82rem,1.5vw,1rem);color:var(--ink-soft);padding:.5rem 1rem;border:1px solid var(--line);border-radius:var(--r-sm)}
+.marki-gwar{text-align:center;color:var(--muted);font-size:var(--text-sm);margin-top:var(--space-6)}
+
+/* ============================================================
+   FAZA 3 - OSOBNY UKŁAD FACHOWCY (research wf_e4ed63db + krytyka z policzonym WCAG). Doklejane na wierzch.
+   Tożsamość: ZAUFANIE + DUŻY TELEFON + DOWÓD. Dwublok hero (zdjęcie | lity panel), bezpośrednio, solidnie.
+   ============================================================ */
+
+/* --- P0 KONTRAST: bursztyn jako TEKST na jasnym = 2.0 FAIL (policzone). Naprawy (bursztyn->ciemny tekst / ink). --- */
+.btn-accent{color:#14171c}                                  /* bursztyn + ciemny tekst = 8.28 PASS */
+.sticky-call .sc-call{color:#14171c}                        /* sticky bursztyn + ciemny tekst */
+.obszar-list li.is-home{background:var(--ink);border-color:var(--ink);color:#fff}  /* było bursztyn+biel 2.17 -> ink+biel 16.29 */
+.proces-line .pno{color:var(--ink-soft)}                    /* numery procesu: było bursztyn 2.0 -> ink-soft (czytelne); kropka osi zostaje bursztyn (grafika) */
+
+/* --- Ikona telefonu (uzywana w hero hf-phone-num; nav styluje silnik NAV NOBU) --- */
+.ico-tel{vertical-align:-2px;margin-right:.3em}
+
+/* === HERO FACHOWCY: dwublok (zdjęcie | lity panel ink). Zdjęcie = PIERWSZE dziecko (blur-guard + mobilny stack). STATYCZNE. === */
+.hero-fach{display:grid;grid-template-columns:1fr minmax(0,46%);min-height:clamp(540px,76vh,740px);min-height:clamp(540px,76svh,740px)}
+.hf-photo{width:100%;height:100%;object-fit:cover;display:block;background:var(--paper-2)}  /* img = PIERWSZE dziecko sekcji (blur-guard); EAGER, bez animacji (zero janku) */
+.hf-panel{order:-1;background:var(--ink);color:#fff;display:flex;flex-direction:column;justify-content:center;
+  padding:clamp(2.2rem,5vw,4.5rem) clamp(1.6rem,4vw,3.6rem)}
+.hf-kicker{font-family:var(--font-display);font-weight:700;text-transform:uppercase;letter-spacing:.14em;
+  font-size:clamp(.74rem,1.4vw,.9rem);color:var(--accent)}
+.hf-title{color:#fff;font-family:var(--font-display);font-weight:800;line-height:1.05;letter-spacing:-.01em;
+  font-size:clamp(1.9rem,1.4rem + 2vw,3rem);margin:var(--space-3) 0 var(--space-5)}
+.hf-phone{display:inline-flex;flex-direction:column;gap:.15rem;margin-bottom:var(--space-5);width:fit-content}
+.hf-phone-lab{font-size:.74rem;text-transform:uppercase;letter-spacing:.14em;color:rgba(255,255,255,.66)}
+.hf-phone-num{font-family:var(--font-display);font-weight:800;color:#fff;font-variant-numeric:tabular-nums;white-space:nowrap;
+  font-size:clamp(2rem,1.4rem + 2.2vw,2.9rem);line-height:1;display:inline-flex;align-items:center}
+.hf-phone-num .ico-tel{width:.7em;height:.7em;color:var(--accent);margin-right:.35em}   /* ikona bursztyn, cyfry białe */
+.hf-phone:hover .hf-phone-num{color:var(--accent)}
+.hf-actions{display:flex;flex-wrap:wrap;gap:var(--space-3)}
+.hf-ghost{color:#fff;border-color:rgba(255,255,255,.45)}
+.hf-trust{margin-top:var(--space-5);padding-top:var(--space-4);border-top:1px solid rgba(255,255,255,.16);
+  color:rgba(255,255,255,.82);font-weight:600;font-size:var(--text-sm);letter-spacing:.01em}
+@media(max-width:820px){
+  .hero-fach{grid-template-columns:1fr;min-height:0}
+  .hf-photo{aspect-ratio:16/10}
+  .hf-panel{order:0;padding-block:clamp(2rem,7vw,3rem)}     /* DOM-order: zdjęcie na górze, panel pod */
+}
+
+/* === PROMISE BAR: zawsze-obecna sygnatura usługowa (anty recon-collapse) === */
+.fach-promise{background:var(--paper-2);border-bottom:var(--hairline);padding-block:0}
+.fach-promise .wrap{padding-block:var(--space-4)}
+.fp-row{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:clamp(.6rem,2.4vw,2rem)}
+.fp-row li{font-family:var(--font-display);font-weight:700;text-transform:uppercase;letter-spacing:.08em;
+  font-size:clamp(.72rem,1.3vw,.85rem);color:var(--ink-soft);display:flex;align-items:center}
+.fp-row li:not(:last-child)::after{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent);margin-left:clamp(.6rem,2.4vw,2rem)}
+
+/* === TRUST BAR (gated): jasne pasmo, cyfry INK (NIE bursztyn=2.0 FAIL), bursztyn jako kreska pod liczbą === */
+.trust-bar{background:var(--paper);border-bottom:var(--hairline)}
+.trust-bar .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:clamp(1rem,3vw,2.6rem);padding-block:var(--space-7)}
+.tb-stats{display:flex;flex-wrap:wrap;gap:clamp(1rem,3vw,2.6rem)}
+.tb-stat{display:flex;flex-direction:column;align-items:center;text-align:center;padding-bottom:var(--space-2);border-bottom:3px solid var(--accent)}
+.tb-num{font-family:var(--font-display);font-weight:800;font-size:clamp(2rem,3vw,2.8rem);line-height:1;color:var(--ink);font-variant-numeric:tabular-nums}
+.tb-lab{font-size:.74rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-top:.3rem}
+.tb-google{font-weight:700;color:var(--ink);font-size:var(--text-base);background:var(--paper-2);border:var(--hairline);border-radius:999px;padding:.5rem 1.1rem;font-variant-numeric:tabular-nums}
+.tb-seal{font-family:var(--font-display);font-weight:700;text-transform:uppercase;letter-spacing:.06em;font-size:.85rem;
+  color:var(--ink);border:1px solid var(--accent);border-radius:var(--r-sm);padding:.5rem 1rem}
+
+/* === LISTA USŁUG (zamiast bram-nastrojowych): konkret "co + zakres + wycena" === */
+.fach-uslugi .fu-list{list-style:none;margin:var(--space-8) 0 0;padding:0;display:flex;flex-direction:column}
+.fu-row{display:grid;grid-template-columns:minmax(11rem,1fr) 2fr auto;gap:clamp(1rem,3vw,2.5rem);align-items:center;
+  padding-block:var(--space-5);border-top:1px solid var(--line)}
+.fu-row:last-child{border-bottom:1px solid var(--line)}
+.fu-name{font-family:var(--font-display);font-weight:700;font-size:1.15rem;color:var(--ink)}
+.fu-desc{color:var(--muted);font-size:var(--text-sm);line-height:1.55}
+.fu-cta{font-weight:700;font-size:var(--text-sm);color:var(--accent-d);white-space:nowrap}
+.fu-cta:hover{color:var(--ink)}
+@media(max-width:760px){.fu-row{grid-template-columns:1fr;gap:var(--space-2)}.fu-cta{justify-self:start}}
+
+/* === OPINIE (gated): realne cytaty z reconu === */
+.opinie-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(16rem,1fr));gap:var(--space-6);margin-top:var(--space-8)}
+.op-card{margin:0;background:var(--paper);border:1px solid var(--line);border-radius:var(--r-md);padding:var(--space-6);display:flex;flex-direction:column;gap:var(--space-3)}
+.op-star{color:var(--accent-d);letter-spacing:.1em;font-size:.95rem}
+.op-card blockquote{margin:0;color:var(--ink-soft);font-size:var(--text-base);line-height:1.6}
+.op-autor{font-family:var(--font-display);font-weight:700;color:var(--ink);font-size:.95rem}
+
+/* === SUWAK PRZED/PO (kopia z auto.css - CSS nie dziedziczy się między rodzinami; krytyka 5b) === */
+.auto-ba .ba-slider{position:relative;--ba-pos:50%;max-width:62rem;margin:var(--space-8) auto 0;aspect-ratio:16/9;
+  overflow:hidden;border-radius:var(--r-sm);border:1px solid var(--line);touch-action:none;user-select:none;cursor:ew-resize}
+.ba-slider img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.ba-before-wrap{position:absolute;inset:0;clip-path:inset(0 calc(100% - var(--ba-pos)) 0 0)}
+.ba-lab{position:absolute;top:var(--space-4);z-index:3;font-family:var(--font-display);text-transform:uppercase;
+  letter-spacing:.1em;font-size:.7rem;color:#fff;background:rgba(10,12,15,.6);padding:.3rem .6rem;border-radius:2px}
+.ba-lab-l{left:var(--space-4)}
+.ba-lab-r{right:var(--space-4)}
+.ba-handle{position:absolute;top:0;bottom:0;left:var(--ba-pos);width:2px;background:var(--accent);transform:translateX(-1px);z-index:4;pointer-events:none}
+.ba-handle span{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:38px;height:38px;border-radius:50%;
+  background:var(--accent);box-shadow:0 2px 12px rgba(0,0,0,.4);display:flex;align-items:center;justify-content:center}
+.ba-handle span::before,.ba-handle span::after{content:"";position:absolute;width:0;height:0;border-block:5px solid transparent}
+.ba-handle span::before{left:9px;border-right:6px solid #14171c}
+.ba-handle span::after{right:9px;border-left:6px solid #14171c}
+.ba-podpis{text-align:center;color:var(--muted);font-size:var(--text-sm);margin-top:var(--space-5)}
+
+/* === NAV NOBU (silnik): fachowcy === */
+.nav{position:fixed;left:0;right:0;backdrop-filter:none;border-bottom:1px solid transparent;z-index:100;transition:transform .35s var(--ease),background .35s ease,box-shadow .35s ease}
+.nav.nav-hidden{transform:translateY(-100%)}
+.nav.is-stuck{background:transparent;box-shadow:none;border-bottom-color:transparent}
+.nav.is-stuck .nav-inner{height:64px}
+.nav .brand{flex-direction:row;align-items:baseline;gap:.6rem;line-height:1}
+.nav .brand .name{font-family:var(--font-display);font-weight:600;font-size:1.5rem;text-transform:uppercase;letter-spacing:.14em}
+.nav .brand .sub{margin-top:0;padding-left:.65rem;border-left:1px solid currentColor;font-size:.66rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase}
+.nav .nav-links a{font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;padding-block:6px}
+.nav .nav-links a::after{height:1px}
+.nav .nav-links a.btn-accent{font-size:.73rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;padding:.5rem 1.1rem;border-radius:4px;box-shadow:none}
+.nav .nav-links a.btn-accent:hover{transform:none;box-shadow:none}
+.nav .nav-links a.btn-accent{background:var(--accent);border:1px solid var(--accent);color:#14171c}
+.nav .nav-links a.btn-accent:hover{background:var(--accent);border-color:var(--accent);color:#14171c;filter:brightness(1.07)}
+.nav{background:transparent}
+.nav::after{content:"";position:absolute;left:0;right:0;top:0;height:150px;z-index:-1;pointer-events:none;transition:opacity .35s ease;background:linear-gradient(180deg,rgba(8,6,4,.55) 0%,rgba(8,6,4,0) 100%)}
+.nav.nav-solid::after{opacity:0}
+.nav .brand .name{color:#f5f1ea}
+.nav .brand .sub{color:rgba(245,241,234,.82)}
+.nav .nav-links a:not(.btn-accent){color:rgba(245,241,234,.9)}
+.nav .nav-links a:not(.btn-accent):hover,.nav .nav-links a.active:not(.btn-accent){color:#fff}
+.nav .nav-links a:not(.btn-accent)::after{background:#fff}
+.nav .nav-toggle span{background:#f5f1ea}
+.nav.nav-solid{background:color-mix(in srgb,var(--paper) 94%,transparent);backdrop-filter:saturate(140%) blur(10px);border-bottom:var(--hairline)}
+.nav.nav-solid .brand .name{color:var(--ink)}
+.nav.nav-solid .brand .sub{color:var(--accent-d)}
+.nav.nav-solid .nav-links a:not(.btn-accent){color:var(--ink-soft)}
+.nav.nav-solid .nav-links a:not(.btn-accent):hover,.nav.nav-solid .nav-links a.active:not(.btn-accent){color:var(--ink)}
+.nav.nav-solid .nav-links a:not(.btn-accent)::after{background:var(--accent-d)}
+.nav.nav-solid .nav-toggle span{background:var(--ink)}
+.nav.nav-solid.nav-hidden{background:transparent;box-shadow:none;border-bottom-color:transparent}
+@media(min-width:681px){
+.nav .nav-inner{position:relative;height:64px}
+.nav .nav-links{flex:1;justify-content:center;gap:clamp(1rem,2.2vw,1.9rem);padding-right:12rem}
+.nav .nav-links a.btn-accent{position:absolute;right:0;top:50%;transform:translateY(-50%);margin:0}
+.nav:not(.nav-solid) .nav-links a.btn-accent{background:transparent;border-color:rgba(245,241,234,.55);color:#f5f1ea}
+.nav:not(.nav-solid) .nav-links a.btn-accent:hover{background:var(--accent);border-color:var(--accent);color:#14171c;transform:translateY(-50%)}
+}
+@media(max-width:680px){
+.nav .nav-links:not(.open){transform:translateY(-160%);visibility:hidden}
+.nav .nav-links.open{visibility:visible}
+.nav .brand .name{font-size:1.12rem;letter-spacing:.1em}
+.nav .brand .sub{display:none}
+.nav .brand{min-width:0;overflow:hidden}
+.nav .nav-links{background:var(--paper)}
+.nav .nav-links a:not(.btn-accent){color:var(--ink-soft)}
+.nav .nav-links a:not(.btn-accent):hover,.nav .nav-links a.active:not(.btn-accent){color:var(--ink)}
+}
+
+/* === MOTION LAYER v2 (silnik) === */
+/* ============================================================
+   MOTION LAYER v2 — warstwa RUCHU wspólna dla wszystkich rodzin (2026-07-26)
+   ------------------------------------------------------------
+   PO CO: dema były technicznie poprawne, ale statyczne („za mało efektowne",
+   K. 26.07). Ta warstwa dokłada to, co dziś odróżnia stronę premium od
+   porządnej: maskowane wejście nagłówków, zdjęcia odsłaniane kurtyną + zoom-out,
+   parallax sterowany scrollem (CSS scroll-driven, zero JS w pętli scrolla),
+   płynne przejścia MIĘDZY podstronami (View Transitions), stagger siatek.
+
+   ZASADY BEZPIECZEŃSTWA (wynikają z realnych wpadek — NIE łamać):
+   1. ⛔ ZERO ruchu geometrycznego na `.hero-cine>img` — skalowanie teksturowanej
+      bitmapy = shimmer („heroshot się trzęsie", 3x Szymon). Hero rusza się TYLKO
+      tekstem i tylko raz. Bramka predeploy tego pilnuje.
+   2. Stan początkowy (ukrycie) ustawia ZAWSZE JavaScript przez klasę `.mt-on`
+      na <html>. Bez JS / przy błędzie JS strona wygląda dokładnie jak przed tą
+      warstwą — nigdy pusty ekran (wpadka Zmalovane 29.06).
+   3. Używamy osobnych właściwości `scale:` / `translate:` zamiast `transform:` —
+      dzięki temu wejście NIE kasuje istniejących hoverów (które jadą na transform).
+   4. Każdy efekt „drogi" (parallax) tylko desktop + tylko gdy przeglądarka umie
+      scroll-driven animations. Mobile dostaje sam fade/mask (bateria, jank).
+   5. prefers-reduced-motion wyłącza wszystko (blanket w base.css + własne guardy).
+   ============================================================ */
+
+:root{
+  --mt-ease:cubic-bezier(.16,.84,.44,1);
+  --mt-step:70ms;          /* odstęp między kolejnymi elementami siatki */
+}
+
+/* ---------- 1) STAGGER — kolejne elementy siatki wchodzą po sobie ----------
+   JS ustawia --i (numer w grupie). Podbita specyficzność (:nth-child(n)) bije
+   sztywne delaye galerii z base.css, nie ruszając tamtego pliku. */
+.reveal{transition-delay:calc(var(--i,0) * var(--mt-step))}
+.gallery .reveal:nth-child(n),
+.gateways .reveal:nth-child(n),
+.svc-grid .reveal:nth-child(n){transition-delay:calc(var(--i,0) * var(--mt-step))}
+
+/* dłuższy, bardziej „aksamitny" dojazd + delikatny zoom-out całej karty */
+.mt-on .reveal{transition-duration:1s,1s}
+
+/* ---------- 2) NAGŁÓWKI — wjazd linia po linii zza maski ----------
+   JS dzieli tekst na realne linie (po pomiarze) i owija w .mt-line>i.
+   Efekt „szuflady": litery wjeżdżają z dołu, obcięte krawędzią linii. */
+.mt-lines .mt-line{display:block;overflow:hidden;padding-bottom:.08em;margin-bottom:-.08em}
+.mt-lines .mt-line > i{
+  display:block;font-style:inherit;
+  translate:0 108%;
+  transition:translate 1.05s var(--mt-ease) var(--mt-d,0s);
+}
+.mt-lines.mt-in .mt-line > i{translate:0 0}
+
+/* wariant awaryjny (nagłówek ma zagnieżdżony markup → nie dzielimy na linie) */
+.mt-fade{opacity:0;translate:0 18px;transition:opacity .9s var(--mt-ease) var(--mt-d,0s),translate .9s var(--mt-ease) var(--mt-d,0s)}
+.mt-fade.mt-in{opacity:1;translate:0 0}
+
+/* ---------- 3) ZDJĘCIA — odsłanianie „kurtyną" + zoom-out do naturalnej skali ----
+   clip-path jedzie od dołu do góry, jednocześnie obraz schodzi z 1.10 do 1.
+   Uwaga: `scale:` (nie transform) → hover .tile:hover img{transform:scale(1.05)}
+   nadal działa i nie kłóci się z wejściem. */
+.mt-on .mt-ph > img,
+.mt-on .mt-ph > picture > img{
+  clip-path:inset(0 0 100% 0);
+  scale:1.10;
+  transition:clip-path 1.15s var(--mt-ease) var(--mt-d,0s),
+             scale 1.6s var(--mt-ease) var(--mt-d,0s);
+}
+.mt-on .mt-ph.in > img,
+.mt-on .in .mt-ph > img,
+.mt-on .mt-ph.mt-in > img,
+.mt-on .mt-ph.in > picture > img,
+.mt-on .in .mt-ph > picture > img{clip-path:inset(0 0 0 0);scale:1}
+
+/* podpis kafla — delikatnie widoczny od razu, pełny na hover (mniej „martwych" kafli) */
+.mt-on .tile .cap{opacity:.001}
+.mt-on .tile.in .cap{opacity:.9;translate:0 0;transform:none}
+.mt-on .tile.in:hover .cap{opacity:1}
+
+/* ---------- 4) PARALLAX — sterowany scrollem, natywnym CSS (bez JS) ----------
+   animation-timeline:view() = przeglądarka sama liczy postęp elementu w oknie.
+   Zero listenerów scrolla → zero janku. Desktop only, tylko gdy wspierane. */
+@supports (animation-timeline: view()){
+  @media (prefers-reduced-motion:no-preference) and (min-width:900px){
+    .mt-para{overflow:hidden}
+    .mt-para > img{
+      height:114%;
+      position:relative;top:-7%;
+      animation:mtPara linear both;
+      animation-timeline:view();
+      animation-range:cover 0% cover 100%;
+      will-change:translate;
+    }
+    @keyframes mtPara{from{translate:0 -4.5%}to{translate:0 4.5%}}
+
+    /* sekcje wchodzą z lekkim „oddechem" — zanika przy wyjeździe z ekranu */
+    .mt-breathe{
+      animation:mtBreathe linear both;
+      animation-timeline:view();
+      animation-range:entry 0% entry 70%;
+    }
+    @keyframes mtBreathe{from{opacity:.35}to{opacity:1}}
+  }
+}
+
+/* ---------- 4b) ŻYWY NAGŁÓWEK — przenikanie kadrów ----------
+   Warstwy leżą DOKŁADNIE na zdjęciu hero i różnią się tylko przezroczystością.
+   ⛔ Żadnego scale/translate — to skalowanie bitmapy dawało migotanie na teksturach.
+   Warstwy wstawia JS; bez niego nic się nie dzieje i nagłówek jest statyczny jak dotąd. */
+.mt-hero-layer{
+  position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;object-position:inherit;
+  opacity:0;transition:opacity 1.6s ease-in-out;
+  pointer-events:none;z-index:1;
+}
+/* ⚠️ KONIECZNE: warstwa jest zwykłym <img> wewnątrz hero, więc łapie ją reguła
+   `.hero-cine > img{animation:heroFade both}` z base.css. Animacja CSS ma pierwszeństwo przed
+   zwykłymi deklaracjami — trzymała przezroczystość na klatce startowej i przenikanie nie działało.
+   Zdejmujemy JEDYNIE to jednorazowe pojawienie się (heroFade), celowo BEZ !important, żeby
+   rodziny z delikatnym zoomem tła (gastro/auto/dom/studio) mogły go warstwie przekazać. */
+.hero-cine > img.mt-hero-layer{animation:none}
+.mt-hero-layer.mt-show{opacity:1}
+/* gdy pokazujemy kadr z rotacji, oryginalne zdjęcie zostaje pod spodem (nigdy nie znika
+   całkowicie — gdyby warstwa nie doszła, pod spodem zawsze jest pełne zdjęcie) */
+img[data-rotate].mt-under{opacity:1}
+/* treść nagłówka musi zostać NAD warstwami */
+.hero-cine > .wrap,.hero-cine .hero-copy,
+.hg-copy,.ha-copy,.hd-copy,.hs-copy,.hf-copy,.hk-copy,.hero-spa .wrap{position:relative;z-index:3}
+@media(prefers-reduced-motion:reduce){
+  .mt-hero-layer{display:none}
+}
+
+/* ---------- 5) PRZEJŚCIA MIĘDZY PODSTRONAMI (View Transitions) ----------
+   Klik w menu przestaje być białym mignięciem — strony przenikają, a pasek
+   nawigacji zostaje w miejscu (nazwany element). Przeglądarki bez wsparcia
+   nawigują normalnie — zero ryzyka. */
+@view-transition{navigation:auto}
+@media (prefers-reduced-motion:no-preference){
+  ::view-transition-old(root){animation:mtVtOut .26s ease both}
+  ::view-transition-new(root){animation:mtVtIn .42s var(--mt-ease) both}
+  @keyframes mtVtOut{from{opacity:1}to{opacity:0}}
+  @keyframes mtVtIn{from{opacity:0}to{opacity:1}}
+}
+.nav{view-transition-name:mt-nav}
+footer{view-transition-name:mt-foot}
+
+/* ---------- 6) PASEK POSTĘPU CZYTANIA — 2px w kolorze marki ----------
+   Też scroll-driven (bez JS). Wstawiany przez JS tylko gdy przeglądarka umie. */
+.mt-progress{
+  position:fixed;top:0;left:0;z-index:60;
+  height:2px;width:100%;
+  background:var(--accent);
+  transform-origin:0 50%;
+  scale:0 1;
+  pointer-events:none;
+}
+@supports (animation-timeline: scroll()){
+  .mt-progress{animation:mtProg linear both;animation-timeline:scroll(root block)}
+  @keyframes mtProg{from{scale:0 1}to{scale:1 1}}
+}
+
+/* ---------- 7) PRZYCISKI — przelot światła + magnes (JS) ----------
+   Nakładka jest przezroczysta i przelotowa → NIE zmienia kontrastu tekstu
+   (kontrasty WCAG policzone dla wszystkich rodzin zostają w mocy). */
+.btn{position:relative;overflow:hidden;isolation:isolate}
+.btn::after{
+  content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background:linear-gradient(100deg,transparent 32%,rgba(255,255,255,.20) 50%,transparent 68%);
+  translate:-120% 0;
+}
+@media (prefers-reduced-motion:no-preference){
+  .btn:hover::after{translate:120% 0;transition:translate .75s var(--mt-ease)}
+}
+.btn{transition:transform var(--dur) var(--ease),box-shadow var(--dur) var(--ease),
+               background var(--dur) var(--ease),translate .25s ease-out}
+
+/* ---------- 8) LINKI NAWIGACJI / LISTY — mikro-detale ---------- */
+.mt-on .svc,.mt-on .trust-card{transition:transform .5s var(--mt-ease),border-color .35s ease,box-shadow .35s ease}
+.mt-on .svc:hover{transform:translateY(-4px)}
+
+/* kotwice nie chowają się pod przyklejonym paskiem */
+:target,[id]{scroll-margin-top:96px}
+
+/* ---------- 9) LICZBY (count-up) ---------- */
+.mt-num{font-variant-numeric:tabular-nums}
+
+/* ---------- 9b) ZWALNIANIE WARSTW GPU (27.07 — zgłoszenie „zamula na komputerze") ----------
+   `.reveal{will-change:opacity,transform}` z base.css każe przeglądarce trzymać dla KAŻDEGO
+   pojawiającego się elementu osobną warstwę w pamięci karty graficznej. Deklaracja jest stała —
+   warstwa nigdy nie jest zwalniana, więc na typowej podstronie wisi ich ~26 przy ~157 elementach.
+   Na komputerze ze zintegrowaną grafiką to realny koszt (pamięć + praca kompozytora).
+   Element, który już wjechał, nie będzie się więcej animował → warstwa jest zbędna.
+   ⚠️ KLUCZOWE: NIE wolno tego wiązać z klasą `.in` — ona pojawia się w chwili STARTU przejścia,
+   więc zdjęlibyśmy warstwę dokładnie wtedy, gdy jest potrzebna. Klasę `mt-settled` dokłada JS
+   dopiero po `transitionend`, czyli gdy ruch faktycznie się skończył. Brak JS = zostaje jak było. */
+.reveal.mt-settled{will-change:auto}
+.mt-settled > img,.mt-settled > picture > img{will-change:auto}
+
+/* ---------- 10) WYŁĄCZNIK GLOBALNY ----------
+   Gdy user woli mniej ruchu — zdejmujemy wszystko, łącznie ze scroll-driven
+   (blanket z base.css nie obejmuje animation-timeline). */
+@media (prefers-reduced-motion:reduce){
+  .mt-lines .mt-line > i{translate:0 0}
+  .mt-fade{opacity:1;translate:0 0}
+  .mt-on .mt-ph > img,.mt-on .mt-ph > picture > img{clip-path:none;scale:1}
+  .mt-para > img{animation:none;height:100%;top:0}
+  .mt-breathe{animation:none}
+  .mt-progress{display:none}
+  .mt-on .tile .cap{opacity:0}
+}
+
 
 /* === auto-paleta ze zdjęć klienta (dopasowanie do estetyki socials) === */
 :root{--accent:#966534;--accent-d:#734B23;--accent-soft:rgba(150,101,52,0.10);--paper:#F9F9F8;--paper-2:#EFEEED;--paper-3:#E8E7E5;}

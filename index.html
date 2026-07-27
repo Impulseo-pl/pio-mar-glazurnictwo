@@ -7,7 +7,7 @@
 <meta name="description" content="PIO-MAR Glazurnictwo Malbork - układanie płytek, gresu i wielkoformatów, łazienki pod klucz, wykończenia wnętrz. Malbork, Elbląg, Tczew, Trójmiasto i okolice. Od 2012 roku. Zadzwoń i umów oględziny.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
@@ -16,58 +16,83 @@
   <div class="wrap nav-inner">
     <a class="brand brand-has-logo" href="index.html"><img class="brand-logo" src="img/logo.png" alt="PIO-MAR Glazurnictwo"></a>
     <nav class="nav-links">
-      <a href="index.html" class="active">Strona główna</a>
-      <a href="realizacje.html">Realizacje</a>
       <a href="oferta.html">Oferta</a>
+      <a href="realizacje.html">Realizacje</a>
       <a href="o-nas.html">O nas</a>
       <a href="kontakt.html">Kontakt</a>
-      <a href="kontakt.html" class="btn btn-accent">Zapytaj o wycenę</a>
+      <a href="tel:+48724857620" class="btn btn-accent">Zadzwoń +48 724 857 620</a>
     </nav>
     <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
 </header>
 
-<section class="hero-cine">
-  <img src="img/hero.jpg" alt="PIO-MAR Glazurnictwo - Płytki ułożone tak, że fuga trzyma linię">
-  <div class="wrap">
-    <div class="hero-copy">
-      <span class="eyebrow">Glazurnictwo · Malbork · od 2012</span>
-      <h1>Płytki ułożone tak, że fuga trzyma linię</h1>
-      <p class="lead">Glazurnictwo i łazienki pod klucz. Malbork, Elbląg, Tczew, Sztum i Trójmiasto.</p>
-      <div class="hero-actions">
-        <a href="realizacje.html" class="btn btn-accent">Zobacz realizacje <span class="arr">→</span></a>
-        <a href="kontakt.html" class="btn btn-ghost" style="color:#fff;border-color:rgba(255,255,255,.45)">Zapytaj o wycenę</a>
+<section class="hero-fach">
+  <img class="hf-photo" src="img/hero.jpg" fetchpriority="high" alt="PIO-MAR Glazurnictwo">
+  <div class="hf-panel">
+      <span class="hf-kicker">Glazurnictwo · Malbork · od 2012</span>
+      <h1 class="hf-title">Płytki ułożone tak, że fuga trzyma linię</h1>
+      <a class="hf-phone" href="tel:+48724857620"><span class="hf-phone-lab">Zadzwoń teraz</span><span class="hf-phone-num"><svg class="ico-tel" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11.4 11.4 0 0 0 3.6.58 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.46.58 3.6a1 1 0 0 1-.25 1l-2.23 2.2Z" fill="currentColor"/></svg> +48 724 857 620</span></a>
+      <div class="hf-actions">
+        <a href="kontakt.html" class="btn btn-accent">Bezpłatna wycena <span class="arr">→</span></a>
+        <a href="tel:+48724857620" class="btn btn-ghost hf-ghost">Zadzwoń +48 724 857 620</a>
       </div>
-    </div>
+      <div class="hf-trust"><svg class="ico-star" width="14" height="14" viewBox="0 0 24 24" style="vertical-align:-2px" aria-hidden="true"><path d="M12 2.8l2.85 5.8 6.4.93-4.63 4.5 1.1 6.37L12 17.4l-5.72 3 1.1-6.37-4.63-4.5 6.4-.93L12 2.8Z" fill="currentColor"/></svg> Ocena 5,0 w Oferteo · 4 opinie · na rynku od 2012</div>
   </div>
 </section>
-<section class="strip" style="padding-block:0">
+<section class="fach-promise">
   <div class="wrap">
-    <div class="item reveal"><div class="k">Od 2012</div><div class="v">roku</div></div>
-    <div class="item reveal"><div class="k">Wielkoformaty</div><div class="v">i gres</div></div>
-    <div class="item reveal"><div class="k">Łazienki</div><div class="v">pod klucz</div></div>
-    <div class="item reveal"><div class="k">Wycena</div><div class="v">przed pracą</div></div>
+    <ul class="fp-row reveal"><li>Bezpłatna wycena</li><li>Dojazd: Malbork i okolice</li><li>Gwarancja na robociznę</li></ul>
   </div>
 </section>
-<section>
-  <div class="wrap split">
-    <div class="split-art reveal"><img src="img/g1.jpg" alt="PIO-MAR Glazurnictwo - realizacja" loading="lazy"></div>
-    <div class="split-copy reveal">
-      <span class="eyebrow">Kim jesteśmy</span>
-      <h2>PIO-MAR Glazurnictwo z Malborka</h2>
-      <p class="muted">Robimy w płytkach od 2012 roku. Przez ten czas przeszły przez nasze ręce łazienki w blokach, domy jednorodzinne w stanie deweloperskim, kuchnie i całe piętra układane gresem w jodełkę. Wchodzimy do pustego pomieszczenia i wychodzimy, kiedy jest umyte, wyfugowane i gotowe do wniesienia mebli.</p>
-      <p class="muted">Działamy w Malborku i okolicy, dojeżdżamy też do Elbląga, Tczewa, Sztumu i w stronę Trójmiasta. Umawiamy oględziny, mierzymy pomieszczenie i podajemy cenę, zanim cokolwiek zaczniemy. Terminy ustalamy uczciwie - jeśli robota potrwa dłużej, mówimy o tym od razu, a nie w połowie remontu.</p>
-      <a href="o-nas.html" class="btn btn-ghost">Poznaj nas <span class="arr">→</span></a>
+<section class="trust-bar">
+  <div class="wrap">
+    <div class="tb-stats">
+      <div class="tb-stat reveal"><span class="tb-num">14</span><span class="tb-lab">lat doświadczenia</span></div>
+      <div class="tb-stat reveal"><span class="tb-num">5,0</span><span class="tb-lab">ocena w Oferteo (4 opinie)</span></div>
+      <div class="tb-stat reveal"><span class="tb-num">2025</span><span class="tb-lab">Złoty Medal Orłów Branży Budowlanej</span></div>
     </div>
+  </div>
+</section>
+<section class="proces fachowcy">
+  <div class="wrap">
+    <div class="head center reveal">
+      <span class="eyebrow">Jak pracujemy</span>
+      <h2>Wiesz, na czym stoisz - na każdym etapie</h2>
+      <p>Prosty, przewidywalny proces. Bez niespodzianek i bez naciągania.</p>
+    </div>
+    <ol class="proces-line">
+      <li class="reveal"><span class="pno">01</span><h3>Bezpłatna wycena</h3><p>Przyjeżdżamy, oglądamy, doradzamy. Bez opłat i bez zobowiązań.</p></li>
+      <li class="reveal"><span class="pno">02</span><h3>Kosztorys i termin</h3><p>Jasna cena i termin na piśmie - zanim cokolwiek ruszy.</p></li>
+      <li class="reveal"><span class="pno">03</span><h3>Realizacja</h3><p>Robimy zgodnie ze sztuką i na umówiony czas.</p></li>
+      <li class="reveal"><span class="pno">04</span><h3>Odbiór i gwarancja</h3><p>Dajemy gwarancję na robociznę i trzymamy termin.</p></li>
+    </ol>
   </div>
 </section>
 <section class="gateways-band">
   <div class="wrap">
     <div class="gateways">
-      <a href="oferta.html" class="gateway reveal"><img src="img/g2.jpg" alt="Układanie płytek i gresu" loading="lazy"><span class="g-ttl">Układanie płytek i gresu</span></a>
-      <a href="oferta.html" class="gateway reveal"><img src="img/g3.jpg" alt="Wielkoformaty i płyty spiekane" loading="lazy"><span class="g-ttl">Wielkoformaty i płyty spiekane</span></a>
-      <a href="oferta.html" class="gateway reveal"><img src="img/g4.jpg" alt="Łazienki pod klucz" loading="lazy"><span class="g-ttl">Łazienki pod klucz</span></a>
+      <a href="oferta.html" class="gateway reveal"><img src="img/g1.jpg" alt="Układanie płytek i gresu" loading="lazy"><span class="g-ttl">Układanie płytek i gresu</span></a>
+      <a href="oferta.html" class="gateway reveal"><img src="img/g2.jpg" alt="Wielkoformaty i płyty spiekane" loading="lazy"><span class="g-ttl">Wielkoformaty i płyty spiekane</span></a>
+      <a href="oferta.html" class="gateway reveal"><img src="img/g3.jpg" alt="Łazienki pod klucz" loading="lazy"><span class="g-ttl">Łazienki pod klucz</span></a>
     </div>
+  </div>
+</section>
+<section class="fach-uslugi">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="eyebrow">Co robimy</span>
+      <h2>Glazurnictwo i wykończenia wnętrz</h2>
+      <p>Zakres prac, jaki robimy najczęściej - pełny opis i wycenę znajdziesz niżej.</p>
+    </div>
+    <ul class="fu-list">
+      <li class="fu-row reveal"><div class="fu-name">Układanie płytek i gresu</div><div class="fu-desc">Ściany i podłogi w łazienkach, kuchniach, salonach i na tarasach. Wypoziomowane podłoże, przemyślany rozkład płytki, cięcia pod skosem i fuga trzymająca jedną linię przez całe pomieszczenie.</div><a class="fu-cta" href="kontakt.html">Wycena <span class="arr">→</span></a></li>
+      <li class="fu-row reveal"><div class="fu-name">Wielkoformaty i płyty spiekane</div><div class="fu-desc">Duże formaty i spieki układamy na ścianach oraz podłogach - z systemem poziomującym i cięciem na miejscu. Mniej fug, spokojniejsza ściana, efekt litego kamienia.</div><a class="fu-cta" href="kontakt.html">Wycena <span class="arr">→</span></a></li>
+      <li class="fu-row reveal"><div class="fu-name">Łazienki pod klucz</div><div class="fu-desc">Od skucia starych płytek, przez hydroizolację i spadki pod odpływ liniowy, po zamontowaną kabinę, wannę i ceramikę. Jedna ekipa prowadzi całą łazienkę, bez przerzucania odpowiedzialności.</div><a class="fu-cta" href="kontakt.html">Wycena <span class="arr">→</span></a></li>
+      <li class="fu-row reveal"><div class="fu-name">Mozaika, heksagony i dekory</div><div class="fu-desc">Ściana za blatem w kuchni, heksagony przy lustrze, wnęka w strefie prysznica. Drobne formaty wymagają cierpliwości i dobrego rozplanowania - lubimy takie roboty.</div><a class="fu-cta" href="kontakt.html">Wycena <span class="arr">→</span></a></li>
+      <li class="fu-row reveal"><div class="fu-name">Podłogi z gresu w jodełkę</div><div class="fu-desc">Gres drewnopodobny układany w jodełkę klasyczną lub francuską. Wygląda jak parkiet, a znosi wodę i ogrzewanie podłogowe. Wzór rozrysowujemy przed klejeniem, żeby nie zgubić układu przy progach.</div><a class="fu-cta" href="kontakt.html">Wycena <span class="arr">→</span></a></li>
+      <li class="fu-row reveal"><div class="fu-name">Wykończenia wnętrz i remonty</div><div class="fu-desc">Gładzie, malowanie, montaż drzwi i listew, drobna zabudowa - to, co zwykle dochodzi przy remoncie łazienki albo kuchni. Możesz zamówić same płytki albo całe wykończenie.</div><a class="fu-cta" href="kontakt.html">Wycena <span class="arr">→</span></a></li>
+    </ul>
+    <div style="margin-top:var(--space-7)" class="reveal"><a href="oferta.html" class="btn btn-ghost">Pełna oferta <span class="arr">→</span></a></div>
   </div>
 </section>
 <section>
@@ -78,24 +103,46 @@
       <p>Łazienki, kuchnie i podłogi ułożone przez nas w Malborku i okolicy - zdjęcia z ukończonych remontów.</p>
     </div>
     <div class="gallery">
-      <div class="tile t-two3 reveal"><img src="img/g5.jpg" alt="Gres drewnopodobny w jodełkę w salonie" loading="lazy"><div class="cap">Gres drewnopodobny w jodełkę w salonie</div></div>
-      <div class="tile t-third reveal"><img src="img/g6.jpg" alt="Umywalka na blacie, ciemna ściana z płytek" loading="lazy"><div class="cap">Umywalka na blacie, ciemna ściana z płytek</div></div>
-      <div class="tile t-third reveal"><img src="img/g7.jpg" alt="Kabina prysznicowa ze złotą armaturą" loading="lazy"><div class="cap">Kabina prysznicowa ze złotą armaturą</div></div>
-      <div class="tile t-third reveal"><img src="img/g8.jpg" alt="Detal armatury na płycie wielkoformatowej" loading="lazy"><div class="cap">Detal armatury na płycie wielkoformatowej</div></div>
-      <div class="tile t-third reveal"><img src="img/g9.jpg" alt="Wnęka wymurowana w ścianie prysznica" loading="lazy"><div class="cap">Wnęka wymurowana w ścianie prysznica</div></div>
+      <div class="tile t-two3 reveal"><img src="img/g4.jpg" alt="Granatowe heksagony przy lustrze" loading="lazy"><div class="cap">Granatowe heksagony przy lustrze</div></div>
+      <div class="tile t-third reveal"><img src="img/g5.jpg" alt="Gres drewnopodobny w jodełkę w salonie" loading="lazy"><div class="cap">Gres drewnopodobny w jodełkę w salonie</div></div>
+      <div class="tile t-third reveal"><img src="img/g6.jpg" alt="Płytka drewnopodobna i podwieszana ceramika" loading="lazy"><div class="cap">Płytka drewnopodobna i podwieszana ceramika</div></div>
+      <div class="tile t-third reveal"><img src="img/g7.jpg" alt="Wnęka wymurowana w ścianie prysznica" loading="lazy"><div class="cap">Wnęka wymurowana w ścianie prysznica</div></div>
+      <div class="tile t-third reveal"><img src="img/g8.jpg" alt="Łazienka z wanną i ścianą w dekorze" loading="lazy"><div class="cap">Łazienka z wanną i ścianą w dekorze</div></div>
     </div>
     <div style="margin-top:var(--space-7)" class="reveal"><a href="realizacje.html" class="btn btn-accent">Pełna galeria <span class="arr">→</span></a></div>
+  </div>
+</section>
+<section class="opinie">
+  <div class="wrap">
+    <div class="head center reveal">
+      <span class="eyebrow">Opinie</span>
+      <h2>Co mówią klienci</h2>
+    </div>
+    <div class="opinie-grid">
+      <figure class="op-card reveal"><span class="op-star"><svg class="ico-star" width="14" height="14" viewBox="0 0 24 24" style="vertical-align:-2px" aria-hidden="true"><path d="M12 2.8l2.85 5.8 6.4.93-4.63 4.5 1.1 6.37L12 17.4l-5.72 3 1.1-6.37-4.63-4.5 6.4-.93L12 2.8Z" fill="currentColor"/></svg><svg class="ico-star" width="14" height="14" viewBox="0 0 24 24" style="vertical-align:-2px" aria-hidden="true"><path d="M12 2.8l2.85 5.8 6.4.93-4.63 4.5 1.1 6.37L12 17.4l-5.72 3 1.1-6.37-4.63-4.5 6.4-.93L12 2.8Z" fill="currentColor"/></svg><svg class="ico-star" width="14" height="14" viewBox="0 0 24 24" style="vertical-align:-2px" aria-hidden="true"><path d="M12 2.8l2.85 5.8 6.4.93-4.63 4.5 1.1 6.37L12 17.4l-5.72 3 1.1-6.37-4.63-4.5 6.4-.93L12 2.8Z" fill="currentColor"/></svg><svg class="ico-star" width="14" height="14" viewBox="0 0 24 24" style="vertical-align:-2px" aria-hidden="true"><path d="M12 2.8l2.85 5.8 6.4.93-4.63 4.5 1.1 6.37L12 17.4l-5.72 3 1.1-6.37-4.63-4.5 6.4-.93L12 2.8Z" fill="currentColor"/></svg><svg class="ico-star" width="14" height="14" viewBox="0 0 24 24" style="vertical-align:-2px" aria-hidden="true"><path d="M12 2.8l2.85 5.8 6.4.93-4.63 4.5 1.1 6.37L12 17.4l-5.72 3 1.1-6.37-4.63-4.5 6.4-.93L12 2.8Z" fill="currentColor"/></svg></span><blockquote>Jakość wykonanej pracy nie budzi zastrzeżeń, prace wykonane były profesjonalnie, sprawnie i dokładnie. Szef firmy p. Marcin jest uprzejmy, słowny, punktualny.</blockquote><span class="op-autor">B.S., opinia z Oferteo</span></figure>
+      <figure class="op-card reveal"><span class="op-star"><svg class="ico-star" width="14" height="14" viewBox="0 0 24 24" style="vertical-align:-2px" aria-hidden="true"><path d="M12 2.8l2.85 5.8 6.4.93-4.63 4.5 1.1 6.37L12 17.4l-5.72 3 1.1-6.37-4.63-4.5 6.4-.93L12 2.8Z" fill="currentColor"/></svg><svg class="ico-star" width="14" height="14" viewBox="0 0 24 24" style="vertical-align:-2px" aria-hidden="true"><path d="M12 2.8l2.85 5.8 6.4.93-4.63 4.5 1.1 6.37L12 17.4l-5.72 3 1.1-6.37-4.63-4.5 6.4-.93L12 2.8Z" fill="currentColor"/></svg><svg class="ico-star" width="14" height="14" viewBox="0 0 24 24" style="vertical-align:-2px" aria-hidden="true"><path d="M12 2.8l2.85 5.8 6.4.93-4.63 4.5 1.1 6.37L12 17.4l-5.72 3 1.1-6.37-4.63-4.5 6.4-.93L12 2.8Z" fill="currentColor"/></svg><svg class="ico-star" width="14" height="14" viewBox="0 0 24 24" style="vertical-align:-2px" aria-hidden="true"><path d="M12 2.8l2.85 5.8 6.4.93-4.63 4.5 1.1 6.37L12 17.4l-5.72 3 1.1-6.37-4.63-4.5 6.4-.93L12 2.8Z" fill="currentColor"/></svg><svg class="ico-star" width="14" height="14" viewBox="0 0 24 24" style="vertical-align:-2px" aria-hidden="true"><path d="M12 2.8l2.85 5.8 6.4.93-4.63 4.5 1.1 6.37L12 17.4l-5.72 3 1.1-6.37-4.63-4.5 6.4-.93L12 2.8Z" fill="currentColor"/></svg></span><blockquote>Najlepszy fachowiec jakiego znam. Łazienka wykonana przepięknie. Pełny profesjonalizm i ogromna pomoc.</blockquote><span class="op-autor">A.M., opinia z Oferteo</span></figure>
+      <figure class="op-card reveal"><span class="op-star"><svg class="ico-star" width="14" height="14" viewBox="0 0 24 24" style="vertical-align:-2px" aria-hidden="true"><path d="M12 2.8l2.85 5.8 6.4.93-4.63 4.5 1.1 6.37L12 17.4l-5.72 3 1.1-6.37-4.63-4.5 6.4-.93L12 2.8Z" fill="currentColor"/></svg><svg class="ico-star" width="14" height="14" viewBox="0 0 24 24" style="vertical-align:-2px" aria-hidden="true"><path d="M12 2.8l2.85 5.8 6.4.93-4.63 4.5 1.1 6.37L12 17.4l-5.72 3 1.1-6.37-4.63-4.5 6.4-.93L12 2.8Z" fill="currentColor"/></svg><svg class="ico-star" width="14" height="14" viewBox="0 0 24 24" style="vertical-align:-2px" aria-hidden="true"><path d="M12 2.8l2.85 5.8 6.4.93-4.63 4.5 1.1 6.37L12 17.4l-5.72 3 1.1-6.37-4.63-4.5 6.4-.93L12 2.8Z" fill="currentColor"/></svg><svg class="ico-star" width="14" height="14" viewBox="0 0 24 24" style="vertical-align:-2px" aria-hidden="true"><path d="M12 2.8l2.85 5.8 6.4.93-4.63 4.5 1.1 6.37L12 17.4l-5.72 3 1.1-6.37-4.63-4.5 6.4-.93L12 2.8Z" fill="currentColor"/></svg><svg class="ico-star" width="14" height="14" viewBox="0 0 24 24" style="vertical-align:-2px" aria-hidden="true"><path d="M12 2.8l2.85 5.8 6.4.93-4.63 4.5 1.1 6.37L12 17.4l-5.72 3 1.1-6.37-4.63-4.5 6.4-.93L12 2.8Z" fill="currentColor"/></svg></span><blockquote>Polecam przedsiębiorstwo. Praca wykonana starannie i terminowo.</blockquote><span class="op-autor">D.D., opinia z Oferteo</span></figure>
+    </div>
+  </div>
+</section>
+<section class="obszar">
+  <div class="wrap">
+    <div class="head center reveal">
+      <span class="eyebrow">Obszar działania</span>
+      <h2>Dojeżdżamy do Ciebie</h2>
+    </div>
+    <ul class="obszar-list reveal"><li class="is-home">Malbork</li><li>Elbląg</li><li>Tczew</li><li>Sztum</li><li>Nowy Dwór Gdański</li><li>Trójmiasto</li><li>+ okolice</li></ul>
   </div>
 </section>
 <section class="cta">
   <div class="wrap">
     <div class="reveal">
       <span class="eyebrow">Współpraca</span>
-      <h2>Zacznijmy od krótkiej rozmowy.</h2>
-      <p>Napisz lub zadzwoń - powiemy, co i jak, bez zobowiązań.</p>
+      <h2>Potrzebujesz fachowca? Wycenimy za darmo.</h2>
+      <p>Zadzwoń lub napisz - przyjedziemy, obejrzymy i podamy jasną cenę. Bez zobowiązań.</p>
     </div>
     <div class="cta-actions reveal">
-      <a href="kontakt.html" class="btn btn-light">Zapytaj o wycenę <span class="arr">→</span></a>
+      <a href="kontakt.html" class="btn btn-light">Bezpłatna wycena <span class="arr">→</span></a>
       <a href="tel:+48724857620" class="btn btn-ghost" style="color:#fff;border-color:rgba(255,255,255,.3)">+48 724 857 620</a>
     </div>
   </div>
@@ -110,9 +157,8 @@
       </div>
       <div class="foot-col">
         <h4>Nawigacja</h4>
-        <a href="index.html">Strona główna</a>
-        <a href="realizacje.html">Realizacje</a>
         <a href="oferta.html">Oferta</a>
+        <a href="realizacje.html">Realizacje</a>
         <a href="o-nas.html">O nas</a>
         <a href="kontakt.html">Kontakt</a>
       </div>
@@ -128,7 +174,7 @@
     </div>
   </div>
 </footer>
-
+<div class="sticky-call"><a class="sc-call" href="tel:+48724857620"><svg class="ico-tel" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11.4 11.4 0 0 0 3.6.58 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.46.58 3.6a1 1 0 0 1-.25 1l-2.23 2.2Z" fill="currentColor"/></svg> Zadzwoń</a><a class="sc-quote" href="kontakt.html">Bezpłatna wycena</a></div>
 
 <script src="assets/main.js"></script>
 </body>
